@@ -39,26 +39,8 @@ class CitiesViewController: UIViewController, UICollectionViewDelegate, UICollec
     private func setupData() {
         activityIndicator.startAnimating()
 
-        cityService.cities { [weak self] (cities, error) in
-            // If error appeared - show the error alert.
-            if let error = error {
-                self?.showAlert(with: error)
-            }
-
+        cityService.cities { [weak self] cities in
             self?.cities = cities
-        }
-    }
-
-    private func showAlert(with error: Error) {
-        // Marshal alert showing to the main thread using GCD.
-        DispatchQueue.main.async { [weak self] in
-            guard let strongSelf = self else {
-                return
-            }
-
-            AlertService.shared.errorOccured(in: strongSelf,
-                                             message: error.localizedDescription,
-                                             action: strongSelf.setupData)
         }
     }
 

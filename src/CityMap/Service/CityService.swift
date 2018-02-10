@@ -1,74 +1,72 @@
-import Foundation
-
-private enum Constants {
-    static let citiesUrl: String = "https://api.myjson.com/bins/7ybe5"
-}
+import CoreData
 
 /**
-    User-friendly type alias for cities loaded callback.
-
-    - parameters:
-    - cities: Loaded array of cities.
-    - error: Contains error, if some is occured.
- */
-typealias CitiesLoadedCallback = (_ cities: [City], _ error: Error?) -> ()
-
-/**
-    A singleton service, that knows how to get cities.
- */
+    A class that synchronize local database with cities with remote endpoint.
+*/
 final class CityService {
+    private let cityWebService = CityWebService.shared
+    private let coreDataProvider = CoreDataProvider.shared
 
-    private let session = URLSession.shared
-    private let jsonDecoder = JSONDecoder()
+    /**
+        Returns a shared singleton city service object.
+    */
+    static let shared = CityService()
 
     private init() { }
 
     /**
-        Returns a shared singleton city service object.
-     */
-    static let shared: CityService = CityService()
+        Load, parse and provide cities asynchroniosly from endpoint (or get cities from the cache if error occured).
 
-    /**
-        Load, parse and provide cities asynchroniosly from endpoint.
+        - parameter callback: The completion handler to call when the cities are retrived.
+    */
+    func cities(callback: @escaping ([City]) -> Void) {
+        cityWebService.cities { [weak self] (remoteCities, error) in
+            if let _ = error {
+                self?.fetchLocalCities(callback: callback)
+                return
+            }
 
-        - parameter callback: The completion handler to call when the cities are loaded and parsed. Could return an empty array of cities. Also, if error occured it's also provided in the callback.
-     */
-    func cities(callback: @escaping CitiesLoadedCallback) {
-
-        // If city url is incorrect - return empty array
-        guard let url = URL(string: Constants.citiesUrl) else {
-            callback([], nil)
-            return
+            self?.storeRemoteCities(using: remoteCities, callback: callback)
         }
+    }
 
-        let urlRequest = URLRequest(url: url)
+    private func fetchLocalCities(callback: @escaping ([City]) -> Void) {
+        let context = coreDataProvider.context
+        context.perform { [weak self] in
+            let cityEntities = self?.fetchCityEntities(from: context) ?? []
 
-        let task = session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
-            guard let strongSelf = self else {
-                callback([], nil)
-                return
+            var cities = [City?]()
+            for cityEntity in cityEntities {
+                cities.append(cityEntity.map())
             }
 
-            if let error = error {
-                callback([], error)
-                return
-            }
-
-            guard let data = data else {
-                callback([], nil)
-                return
-            }
-
-            do {
-                let allCities = try strongSelf.jsonDecoder.decode(Cities.self, from: data)
-                callback(allCities.cities, nil)
-            } catch(let decodeError) {
-                print("Can't decode cities with error: \(decodeError)")
-                callback([], decodeError)
-            }
+            callback(cities.flatMap({ $0 }))
         }
+    }
 
-        task.resume()
+    private func storeRemoteCities(using cities: [City], callback: @escaping ([City]) -> Void) {
+        let context = coreDataProvider.context
+        context.perform { [weak self] in
+            let cityEntities = self?.fetchCityEntities(from: context) ?? []
+
+            // Delete all stored cities.
+            for cityEntity in cityEntities {
+                context.delete(cityEntity)
+            }
+
+            // Add new cities to the context.
+            for city in cities {
+                _ = CityEntity.create(from: city, in: context)
+            }
+
+            try? context.save()
+
+            callback(cities)
+        }
+    }
+
+    private func fetchCityEntities(from context: NSManagedObjectContext) -> [CityEntity] {
+        let fetchRequest = NSFetchRequest<CityEntity>(entityName: String(describing: CityEntity.self))
+        return (try? context.fetch(fetchRequest)) ?? []
     }
 }
-
