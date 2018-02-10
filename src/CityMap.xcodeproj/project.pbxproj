@@ -19,6 +19,7 @@
 		0E06CB2E2028DDEF002E9650 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06CB2C2028DDEE002E9650 /* Location.swift */; };
 		0E69DA60202F7A8F00999974 /* CityViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E69DA5E202F7A8F00999974 /* CityViewCell.swift */; };
 		0E69DA61202F7A8F00999974 /* CitiesCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E69DA5F202F7A8F00999974 /* CitiesCollectionLayout.swift */; };
+		0E69DA63202F819500999974 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E69DA62202F819400999974 /* AlertService.swift */; };
 		F6F25B299D18C98B301CD5C3 /* Pods_CityMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC66C1C4F0513E2A324313C /* Pods_CityMap.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		0E06CB2C2028DDEE002E9650 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0E69DA5E202F7A8F00999974 /* CityViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewCell.swift; sourceTree = "<group>"; };
 		0E69DA5F202F7A8F00999974 /* CitiesCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesCollectionLayout.swift; sourceTree = "<group>"; };
+		0E69DA62202F819400999974 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		0F596EF00E414900B379394D /* Pods-CityMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-CityMap/Pods-CityMap.release.xcconfig"; sourceTree = "<group>"; };
 		3BC66C1C4F0513E2A324313C /* Pods_CityMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4CC2633A246E1136BFD3C0 /* Pods-CityMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CityMap/Pods-CityMap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		0E06CB1E2028DAB0002E9650 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0E69DA62202F819400999974 /* AlertService.swift */,
 				0E06CB1F2028DAB0002E9650 /* CityService.swift */,
 			);
 			path = Service;
@@ -290,6 +293,7 @@
 				0E69DA60202F7A8F00999974 /* CityViewCell.swift in Sources */,
 				0E06CB282028DB17002E9650 /* CitiesViewController.swift in Sources */,
 				0E06CB2E2028DDEF002E9650 /* Location.swift in Sources */,
+				0E69DA63202F819500999974 /* AlertService.swift in Sources */,
 				0E06CB222028DAB0002E9650 /* CityService.swift in Sources */,
 				0E06CB2D2028DDEF002E9650 /* Cities.swift in Sources */,
 				0E06CB2A2028DB18002E9650 /* CityDetailViewController.swift in Sources */,
