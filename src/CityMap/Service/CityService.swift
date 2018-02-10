@@ -1,23 +1,74 @@
 import Foundation
 
+private enum Constants {
+    static let citiesUrl: String = "https://api.myjson.com/bins/7ybe5"
+}
+
 /**
-    A service, that knows how to get cities.
+    User-friendly type alias for cities loaded callback.
+
+    - parameters:
+    - cities: Loaded array of cities.
+    - error: Contains error, if some is occured.
+ */
+typealias CitiesLoadedCallback = (_ cities: [City], _ error: Error?) -> ()
+
+/**
+    A singleton service, that knows how to get cities.
  */
 final class CityService {
 
+    private let session = URLSession.shared
+    private let jsonDecoder = JSONDecoder()
+
+    private init() { }
+
     /**
-        Provide all available cities (predefined values at the current moment).
+        Returns a shared singleton city service object.
      */
-    let cities: [City] = [
-        City(name: "Minsk", description: "Belarus"),
-        City(name: "Warsaw", description: "Poland"),
-        City(name: "Berlin", description: "Germany"),
-        City(name: "Amsterdam", description: "Netherland"),
-        City(name: "Oslo", description: "Norway"),
-        City(name: "Lisbon", description: "Portugal"),
-        City(name: "Madrid", description: "Spain"),
-        City(name: "Moskow", description: "Russia"),
-        City(name: "Kiev", description: "Ukraine"),
-        City(name: "Stockholm", description: "Sweden")
-    ]
+    static let shared: CityService = CityService()
+
+    /**
+        Load, parse and provide cities asynchroniosly from endpoint.
+
+        - parameter callback: The completion handler to call when the cities are loaded and parsed. Could return an empty array of cities. Also, if error occured it's also provided in the callback.
+     */
+    func cities(callback: @escaping CitiesLoadedCallback) {
+
+        // If city url is incorrect - return empty array
+        guard let url = URL(string: Constants.citiesUrl) else {
+            callback([], nil)
+            return
+        }
+
+        let urlRequest = URLRequest(url: url)
+
+        let task = session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
+            guard let strongSelf = self else {
+                callback([], nil)
+                return
+            }
+
+            if let error = error {
+                callback([], error)
+                return
+            }
+
+            guard let data = data else {
+                callback([], nil)
+                return
+            }
+
+            do {
+                let allCities = try strongSelf.jsonDecoder.decode(Cities.self, from: data)
+                callback(allCities.cities, nil)
+            } catch(let decodeError) {
+                print("Can't decode cities with error: \(decodeError)")
+                callback([], decodeError)
+            }
+        }
+
+        task.resume()
+    }
 }
+

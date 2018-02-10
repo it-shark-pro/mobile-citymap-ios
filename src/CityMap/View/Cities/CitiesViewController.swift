@@ -13,17 +13,29 @@ private enum Constants {
  */
 final class CitiesViewController: UITableViewController {
 
-    private let cities = CityService().cities
+    private var cities: [City] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        setupData()
     }
 
     private func setupUI() {
         // Workaround to remove empty cells in table view.
         tableView.tableFooterView = UIView()
+    }
+
+    private func setupData() {
+        CityService.shared.cities { (cities, _) in
+            // Marshal cities from background thread to the main thread using GCD.
+            DispatchQueue.main.async { [weak self] in
+                self?.cities.append(contentsOf: cities)
+                // Update table as data source has changed.
+                self?.tableView.reloadData()
+            }
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
