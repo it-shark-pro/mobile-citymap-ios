@@ -14,13 +14,13 @@
         <!--Cities-->
         <scene sceneID="mLb-Nx-VTa">
             <objects>
-                <tableViewController id="ykV-jT-RQa" sceneMemberID="viewController">
+                <tableViewController id="ykV-jT-RQa" customClass="CitiesViewController" customModule="CityMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mmD-dG-u8N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CityCellIdentifier" rowHeight="65" id="c4E-DU-f39">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CityCellIdentifier" rowHeight="65" id="c4E-DU-f39" customClass="CityTableViewCell" customModule="CityMap" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c4E-DU-f39" id="XPW-fz-DBf">
@@ -50,6 +50,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cityLabel" destination="cEO-xk-Qj1" id="YNt-EU-3u6"/>
+                                    <outlet property="descriptionLabel" destination="JQz-rQ-Lme" id="Qbc-dS-laC"/>
                                     <segue destination="Uyt-9q-BeH" kind="show" identifier="ShowCityDetail" id="fgf-UC-zdM"/>
                                 </connections>
                             </tableViewCell>
@@ -65,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="-213.75" y="106.69014084507042"/>
         </scene>
-        <!--View Controller-->
+        <!--City Detail View Controller-->
         <scene sceneID="F7G-mB-CEp">
             <objects>
-                <viewController id="Uyt-9q-BeH" sceneMemberID="viewController">
+                <viewController id="Uyt-9q-BeH" customClass="CityDetailViewController" customModule="CityMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wkm-Al-bTJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,6 +90,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jS0-iv-jDb"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="tE2-mW-LKg" id="4Yv-Er-WZX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obu-a8-eVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
