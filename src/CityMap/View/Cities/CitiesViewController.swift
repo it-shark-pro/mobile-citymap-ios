@@ -3,6 +3,8 @@ import UIKit
 private enum Segues: String {
     // Segue name that navigates to city detail page (has the same value as the segue in storyboard).
     case showCityDetail = "ShowCityDetail"
+    // Segue name that navigates to the map page (has the same value as the segue in storyboard).
+    case showMap = "ShowMap"
 }
 
 private enum Constants {
@@ -57,6 +59,12 @@ class CitiesViewController: UIViewController, UICollectionViewDelegate, UICollec
             }
 
             detailsController.city = cityCell.city
+        case Segues.showMap.rawValue:
+            guard let mapController = segue.destination as? MapViewController else {
+                return
+            }
+
+            mapController.cities = cities
         default:
             break
         }

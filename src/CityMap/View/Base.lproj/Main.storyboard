@@ -28,17 +28,16 @@
                                             <constraint firstAttribute="width" secondItem="yoD-Mb-1CW" secondAttribute="height" multiplier="16:9" id="9ck-Ui-vM1"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" layoutMarginsFollowReadableWidth="YES" text="Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-mW-LKg">
-                                        <rect key="frame" x="12" y="195.5" width="296" height="21.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-mW-LKg">
+                                        <rect key="frame" x="8" y="195.5" width="304" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" name="ColorPrimaryDark"/>
                                         <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="1" height="1"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="tE2-mW-LKg" firstAttribute="trailing" secondItem="yoD-Mb-1CW" secondAttribute="trailing" constant="-12" id="1AH-kS-ZMf"/>
-                                    <constraint firstItem="tE2-mW-LKg" firstAttribute="leading" secondItem="yoD-Mb-1CW" secondAttribute="leading" constant="12" id="6yi-wx-UtJ"/>
+                                    <constraint firstItem="tE2-mW-LKg" firstAttribute="trailing" secondItem="yoD-Mb-1CW" secondAttribute="trailing" constant="-8" id="1AH-kS-ZMf"/>
+                                    <constraint firstItem="tE2-mW-LKg" firstAttribute="leading" secondItem="yoD-Mb-1CW" secondAttribute="leading" constant="8" id="6yi-wx-UtJ"/>
                                     <constraint firstAttribute="trailing" secondItem="yoD-Mb-1CW" secondAttribute="trailing" id="TnY-rN-b0w"/>
                                     <constraint firstAttribute="bottom" secondItem="tE2-mW-LKg" secondAttribute="bottom" constant="16" id="lvL-zv-4T7"/>
                                     <constraint firstItem="yoD-Mb-1CW" firstAttribute="leading" secondItem="NZd-rC-OIQ" secondAttribute="leading" id="mok-8Z-ufF"/>
@@ -65,6 +64,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obu-a8-eVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="551.25" y="106.69014084507042"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="UTr-WV-aSk">
+            <objects>
+                <viewController id="UCa-HJ-Twx" customClass="MapViewController" customModule="CityMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tGr-Rp-BpD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaG-Ep-ECX">
+                                <rect key="frame" x="0.0" y="116" width="320" height="452"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qaG-Ep-ECX" firstAttribute="top" secondItem="4JX-w7-3jQ" secondAttribute="top" id="Ai5-HX-7em"/>
+                            <constraint firstItem="qaG-Ep-ECX" firstAttribute="bottom" secondItem="4JX-w7-3jQ" secondAttribute="bottom" id="Qed-tJ-yqh"/>
+                            <constraint firstItem="qaG-Ep-ECX" firstAttribute="trailing" secondItem="4JX-w7-3jQ" secondAttribute="trailing" id="cWY-2G-8AE"/>
+                            <constraint firstItem="qaG-Ep-ECX" firstAttribute="leading" secondItem="4JX-w7-3jQ" secondAttribute="leading" id="vL5-tE-gSW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4JX-w7-3jQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="qaG-Ep-ECX" id="iKx-i3-qsy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3x-zG-Xpi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-353" y="1093"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F2G-aQ-JZW">
@@ -174,7 +202,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T4I-DZ-7pm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cities" id="LYh-qI-2ys"/>
+                    <navigationItem key="navigationItem" title="Cities" id="LYh-qI-2ys">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="M1G-n1-HTt">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="UCa-HJ-Twx" kind="show" identifier="ShowMap" id="UaI-2J-c2W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="MMG-mp-x5a" id="yzz-s6-B9u"/>
                         <outlet property="collectionView" destination="oIS-JF-5Sc" id="V8v-Bs-34t"/>
