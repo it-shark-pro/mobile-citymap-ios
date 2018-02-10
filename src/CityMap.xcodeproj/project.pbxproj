@@ -16,6 +16,8 @@
 		0E06CB282028DB17002E9650 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06CB242028DB17002E9650 /* CitiesViewController.swift */; };
 		0E06CB292028DB17002E9650 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06CB252028DB17002E9650 /* CityTableViewCell.swift */; };
 		0E06CB2A2028DB18002E9650 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06CB272028DB17002E9650 /* CityDetailViewController.swift */; };
+		0E06CB2D2028DDEF002E9650 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06CB2B2028DDEE002E9650 /* Cities.swift */; };
+		0E06CB2E2028DDEF002E9650 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06CB2C2028DDEE002E9650 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		0E06CB242028DB17002E9650 /* CitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		0E06CB252028DB17002E9650 /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		0E06CB272028DB17002E9650 /* CityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
+		0E06CB2B2028DDEE002E9650 /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
+		0E06CB2C2028DDEE002E9650 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		0E06CB1B2028DAB0002E9650 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E06CB2B2028DDEE002E9650 /* Cities.swift */,
+				0E06CB2C2028DDEE002E9650 /* Location.swift */,
 				0E06CB1C2028DAB0002E9650 /* City.swift */,
 			);
 			path = Model;
@@ -198,8 +204,10 @@
 			files = (
 				0E06CB202028DAB0002E9650 /* City.swift in Sources */,
 				0E06CB282028DB17002E9650 /* CitiesViewController.swift in Sources */,
+				0E06CB2E2028DDEF002E9650 /* Location.swift in Sources */,
 				0E06CB292028DB17002E9650 /* CityTableViewCell.swift in Sources */,
 				0E06CB222028DAB0002E9650 /* CityService.swift in Sources */,
+				0E06CB2D2028DDEF002E9650 /* Cities.swift in Sources */,
 				0E06CB2A2028DB18002E9650 /* CityDetailViewController.swift in Sources */,
 				0E06CAF0202884A8002E9650 /* AppDelegate.swift in Sources */,
 			);
