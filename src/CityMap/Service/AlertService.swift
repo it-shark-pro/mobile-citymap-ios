@@ -16,7 +16,7 @@ final class AlertService {
     /**
         Load, parse and provide cities asynchroniosly from endpoint.
 
-        - parameters
+        - parameters:
             - vc: The view controller that is responsible to present alert.
             - message: The message that will be presented in the alert.
             - callback: The action that is going to be assigned to the 'Try Again' button.
