@@ -54,7 +54,7 @@
 
 **Пример результата:**
 
-<img src="screenshots/part1-master.png" width="300"><img src="screenshots/part1-detail.png" width="300">
+<img src="screenshots/part1-master.png" width="290"><img src="screenshots/part1-detail.png" width="290">
 
 **Полезные материалы:**
 - [Create a Table View](https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/CreateATableView.html#//apple_ref/doc/uid/TP40015214-CH8-SW1)
@@ -76,7 +76,7 @@
 
 **Пример результата:**
 
-<img src="screenshots/part2-master.png" width="300"><img src="screenshots/part2-detail.png" width="300"><img src="screenshots/part2-error.png" width="300">
+<img src="screenshots/part2-master.png" width="290"><img src="screenshots/part2-detail.png" width="290"><img src="screenshots/part2-error.png" width="290">
 
 **Полезные материалы:**
 - [Collection View - Tutorial](https://www.raywenderlich.com/136159/uicollectionview-tutorial-getting-started)
@@ -99,7 +99,7 @@
 
 ** Пример результата: **
 
-<img src="screenshots/part4-map.png" width="300">
+<img src="screenshots/part4-map.png" width="290">
 
 ** Полезные материалы: **
 - [MapKit Tutorial](https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started)
