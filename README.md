@@ -1,9 +1,5 @@
 # City Map - iOS application (Swift)
 
-<p align="center"> 
-<img src="/screenshots/logo.jpg">
-</p>
-
 В данном репозитории расположены различные материалы для пошагового создания с нуля простого мобильного приложения **City Map** для платформы **iOS**, на языке программирования **Swift**.
 
 **City Map** - мобильное приложения для просмотра базовой информации о различных городах.
@@ -58,7 +54,7 @@
 
 **Пример результата:**
 
-<img src="screenshots/part1-master.png" width="300"> <img src="screenshots/part1-detail.png" width="300">
+<img src="screenshots/part1-master.png" width="300"><img src="screenshots/part1-detail.png" width="300">
 
 **Полезные материалы:**
 - [Create a Table View](https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/CreateATableView.html#//apple_ref/doc/uid/TP40015214-CH8-SW1)
@@ -80,7 +76,7 @@
 
 **Пример результата:**
 
-<img src="screenshots/part2-master.png" width="300"> <img src="screenshots/part2-detail.png" width="300"> <img src="screenshots/part2-error.png" width="300">
+<img src="screenshots/part2-master.png" width="300"><img src="screenshots/part2-detail.png" width="300"><img src="screenshots/part2-error.png" width="300">
 
 **Полезные материалы:**
 - [Collection View - Tutorial](https://www.raywenderlich.com/136159/uicollectionview-tutorial-getting-started)
