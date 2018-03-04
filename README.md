@@ -1,5 +1,9 @@
 # City Map - iOS application (Swift)
 
+<p align="center"> 
+<img src="/screenshots/logo.jpg">
+</p>
+
 В данном репозитории расположены различные материалы для пошагового создания с нуля простого мобильного приложения **City Map** для платформы **iOS**, на языке программирования **Swift**.
 
 **City Map** - мобильное приложения для просмотра базовой информации о различных городах.
@@ -18,10 +22,10 @@
 
 Для того, чтобы начать изучать нативную мобильную разработку под **iOS**, Вам понадобится:
 - Компьютер, работающий под управлением операционной системы **Mac OS** (High Sierra и выше);
-- Среда разработки **XCode** (версии 9.2 и выше);
+- Среда разработки **XCode 9.2**;
 - Базовые знания английского языка (для чтения материалов);
 - Базовые навыки работы с [**Git**](https://try.github.io/levels/1/challenges/1);
-- Базовые знания языка программирования [**Swift**](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2).
+- Базовые знания языка программирования [**Swift 4**](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2).
 
 ## Установка и настройка
 
@@ -52,9 +56,12 @@
 
 Результат, который должен получиться: [GitHub](https://github.com/it-shark-pro/mobile-citymap-ios/tree/part1) | [Zip](https://github.com/it-shark-pro/mobile-citymap-ios/archive/part1.zip)
 
+**Пример результата:**
+
+<img src="screenshots/part1_master.png" width="300">
+<img src="screenshots/part1_detail.png" width="300">
+
 **Полезные материалы:**
-- [Пример результата 1](https://1drv.ms/i/s!At4OhPuAni8EhLMdETfFUnwSjuQCGg)
-- [Пример результата 2](https://1drv.ms/i/s!At4OhPuAni8EhLMeXwWZ9yqw-qZFSg)
 - [Create a Table View](https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/CreateATableView.html#//apple_ref/doc/uid/TP40015214-CH8-SW1)
 - [Implement Navigation](https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/ImplementNavigation.html#//apple_ref/doc/uid/TP40015214-CH16-SW1)
 - [Anatomy of Constraint](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html#//apple_ref/doc/uid/TP40010853-CH9-SW1)
@@ -72,10 +79,13 @@
 
 Результат, который должен получиться: [GitHub](https://github.com/it-shark-pro/mobile-citymap-ios/tree/part2) | [Zip](https://github.com/it-shark-pro/mobile-citymap-ios/archive/part2.zip)
 
+**Пример результата:**
+
+<img src="screenshots/part2_master.png" width="300">
+<img src="screenshots/part2_detail.png" width="300">
+<img src="screenshots/part2_error.png" width="300">
+
 **Полезные материалы:**
-- [Пример результата 1](https://1drv.ms/i/s!At4OhPuAni8EhLMf8hTmYTqkEtAC7g)
-- [Пример результата 2](https://1drv.ms/i/s!At4OhPuAni8EhLMhIOZDoHQHBhyEbA)
-- [Пример результата 2](https://1drv.ms/i/s!At4OhPuAni8EhLMgwF5eDuEoORx6eQ)
 - [Collection View - Tutorial](https://www.raywenderlich.com/136159/uicollectionview-tutorial-getting-started)
 - [Concurrency](https://www.raywenderlich.com/148513/grand-central-dispatch-tutorial-swift-3-part-1)
 - [URLSession Tutorial](https://www.raywenderlich.com/158106/urlsession-tutorial-getting-started)
@@ -94,8 +104,11 @@
 
 В рамках данного задания требуется добавить отдельную страницу с картой, на которой будут отображены метки городов полученных из JSON координат.
 
-**Полезные материалы:**
-- [Пример результата 1](https://1drv.ms/i/s!At4OhPuAni8EhLMiuq3ivVrtLqXDdA)
+** Пример результата: **
+
+<img src="screenshots/part4_map.png" width="300">
+
+** Полезные материалы: **
 - [MapKit Tutorial](https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started)
 
 ### Результат
