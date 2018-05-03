@@ -1,5 +1,3 @@
-import Foundation
-
 /**
     Represent location of the any object on the world map.
  */

@@ -1,5 +1,4 @@
 import Foundation
-
 /**
     Represent a codable city model with basic media and textual information.
  */

@@ -1,5 +1,3 @@
-import Foundation
-
 /**
     Represent a decodable collection of cities.
  */

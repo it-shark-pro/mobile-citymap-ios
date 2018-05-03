@@ -1,5 +1,4 @@
 import UIKit
-import Foundation
 
 /**
     A singleton service, that knows how to show different kind of alerts.
