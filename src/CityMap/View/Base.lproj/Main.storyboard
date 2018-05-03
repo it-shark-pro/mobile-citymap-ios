@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x1k-GY-jIR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x1k-GY-jIR">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -36,6 +36,8 @@
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="tE2-mW-LKg" firstAttribute="trailing" secondItem="yoD-Mb-1CW" secondAttribute="trailing" constant="-12" id="1AH-kS-ZMf"/>
                                     <constraint firstItem="tE2-mW-LKg" firstAttribute="leading" secondItem="yoD-Mb-1CW" secondAttribute="leading" constant="12" id="6yi-wx-UtJ"/>
@@ -47,7 +49,8 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="ColorAccent"/>
+                        <color key="tintColor" name="ColorAccent"/>
                         <constraints>
                             <constraint firstItem="jS0-iv-jDb" firstAttribute="trailing" secondItem="NZd-rC-OIQ" secondAttribute="trailing" id="385-Sw-DZb"/>
                             <constraint firstItem="yoD-Mb-1CW" firstAttribute="width" secondItem="wkm-Al-bTJ" secondAttribute="width" id="6sg-GQ-YFV"/>
@@ -99,7 +102,8 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oIS-JF-5Sc">
                                 <rect key="frame" x="0.0" y="116" width="320" height="452"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="ColorAccent"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="12" id="D1W-Z0-SAB" customClass="CitiesCollectionLayout" customModule="CityMap" customModuleProvider="target">
                                     <size key="itemSize" width="120" height="160"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -163,7 +167,8 @@
                                 <rect key="frame" x="150" y="274" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="ColorAccent"/>
+                        <color key="tintColor" white="1" alpha="0.20185959510000001" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MMG-mp-x5a" firstAttribute="centerX" secondItem="Wnm-Sh-sCY" secondAttribute="centerX" id="7xK-qI-u0S"/>
                             <constraint firstItem="oIS-JF-5Sc" firstAttribute="leading" secondItem="T4I-DZ-7pm" secondAttribute="leading" id="Apq-oy-feU"/>
@@ -189,6 +194,9 @@
         <namedColor name="ColorAccent">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="ColorAccent">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ColorPrimary">
             <color red="0.19599999487400055" green="0.25499999523162842" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -196,5 +204,5 @@
             <color red="0.17254901960784313" green="0.25098039215686274" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    <color key="tintColor" name="ColorAccent"/>
 </document>

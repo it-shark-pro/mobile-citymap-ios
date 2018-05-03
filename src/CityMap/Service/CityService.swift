@@ -40,7 +40,7 @@ final class CityService {
                 cities.append(cityEntity.map())
             }
 
-            callback(cities.flatMap({ $0 }))
+            callback(cities.compactMap({ $0 }))
         }
     }
 
