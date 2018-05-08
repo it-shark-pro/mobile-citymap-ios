@@ -11,7 +11,7 @@ private enum Constants {
  */
 class CityViewCell: UICollectionViewCell {
 
-    @IBOutlet private weak var cityImage: UIImageView!
+    @IBOutlet weak var cityImage: UIImageView!
     @IBOutlet private weak var cityLabel: UILabel!
 
     /**

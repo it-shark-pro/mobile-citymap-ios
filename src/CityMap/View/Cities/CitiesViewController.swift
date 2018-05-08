@@ -13,7 +13,7 @@ private enum Constants {
 /**
     All cities controller to show all available cities as a collection.
 */
-class CitiesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CitiesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate {
 
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -32,6 +32,8 @@ class CitiesViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationController?.delegate = self
 
         setupData()
     }
@@ -78,5 +80,22 @@ class CitiesViewController: UIViewController, UICollectionViewDelegate, UICollec
 
         return cityCell
     }
-}
 
+    // MARK: UINavigationControllerDelegate
+
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let selectedCityCellIndexPath = collectionView.indexPathsForSelectedItems?.first else {
+            return nil
+        }
+
+        switch operation {
+        case .push:
+            return CityDetailTransitionAnimator(collectionView: collectionView, selectedIndexPath: selectedCityCellIndexPath)
+        case .pop:
+            return nil
+        case .none:
+            return nil
+        }
+
+    }
+}
